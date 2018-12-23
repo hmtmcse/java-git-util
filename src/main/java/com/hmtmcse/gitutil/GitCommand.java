@@ -14,4 +14,8 @@ public class GitCommand {
 
     public void clean(){}
 
+    public void gitClone(){}
+
+    public void diff(){}
+
 }
