@@ -12,4 +12,6 @@ public class GitCommand {
 
     public void branch(){}
 
+    public void clean(){}
+
 }
