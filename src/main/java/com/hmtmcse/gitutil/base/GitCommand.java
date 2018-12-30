@@ -64,7 +64,9 @@ public class GitCommand {
 
     }
 
-    public void checkout(){}
+    public Boolean checkout(String branchName) throws GitCommandException {
+        return execute(gitRequest.appPath, "checkout", branchName).isExecuted;
+    }
 
     public String branch() throws GitCommandException {
         return executeSingle("branch").commandOutput;

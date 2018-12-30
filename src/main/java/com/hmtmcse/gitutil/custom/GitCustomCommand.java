@@ -19,6 +19,7 @@ public class GitCustomCommand extends GitCommand {
 
 
     public GitBranchListResponse getProcessedAllBrances() throws GitCommandException {
+        fetchAll();
         CommandResponse commandResponse = remoteBranch();
         GitBranchListResponse gitBranchListResponse = new GitBranchListResponse();
         List<String> list = new ArrayList<>();
