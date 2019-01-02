@@ -87,6 +87,10 @@ public class GitCommand {
         return execute(gitRequest.appPath, "diff", "--name-only", from, to).commandOutput;
     }
 
+    public String diffBetweenFileNameOnly() throws GitCommandException {
+        return execute(gitRequest.appPath, "diff", "--name-only").commandOutput;
+    }
+
 
     public String lastCommitHash() throws GitCommandException {
         return execute(gitRequest.appPath, "log", "-l", "--format=%H").commandOutput;
