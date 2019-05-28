@@ -40,6 +40,8 @@ public class GitCommand {
         commandRequest.setCommandHome(gitRequest.repositoryPath);
         commandRequest.setPrintInConsole(gitRequest.isPrintInConsole);
         commandRequest.cmdOutputLineCallBack = gitRequest.cmdOutputLineCallBack;
+        commandRequest.isPrintCommands = gitRequest.isPrintCommands;
+        commandRequest.isWaitUntilFinish = true;
         CommandResponse commandResponse = osCommandExec.execute(commandRequest);
         if (!commandResponse.isExecuted){
             throw new GitCommandException(commandResponse.exceptionMessage);
@@ -93,7 +95,7 @@ public class GitCommand {
 
 
     public String lastCommitHash() throws GitCommandException {
-        return execute(gitRequest.appPath, "log", "-l", "--format=%H").commandOutput;
+        return execute(gitRequest.appPath, "log", "-1", "--format=%H").commandOutput;
     }
 
 }

@@ -7,6 +7,7 @@ public class GitRequest {
     public String appPath = null;
     public String repositoryPath = null;
     public Boolean isPrintInConsole = false;
+    public Boolean isPrintCommands = false;
     public CmdOutputLineCallBack cmdOutputLineCallBack = null;
 
     public GitRequest setAppPath(String appPath) {
@@ -21,6 +22,11 @@ public class GitRequest {
 
     public GitRequest setPrintInConsole(Boolean printInConsole) {
         isPrintInConsole = printInConsole;
+        return this;
+    }
+
+    public GitRequest setPrintCommands(Boolean printCommands) {
+        isPrintCommands = printCommands;
         return this;
     }
 
